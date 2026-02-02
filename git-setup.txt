@@ -1,0 +1,26 @@
+# Git Setup Commands for Student ID: 26965
+
+# Initialize repository
+git init
+
+# Add all files
+git add .
+
+# Initial commit
+git commit -m "Initial commit: Servlet assignments"
+
+# Create and switch to branch
+git checkout -b servlet_26965
+
+# Add remote origin (replace with your repository URL)
+git remote add origin https://github.com/yourusername/your-repo-name.git
+
+# Push to branch
+git push -u origin servlet_26965
+
+# Add collaborator kardara through GitHub web interface:
+# 1. Go to your repository on GitHub
+# 2. Click Settings > Manage access
+# 3. Click "Invite a collaborator"
+# 4. Enter username: kardara
+# 5. Send invitation
