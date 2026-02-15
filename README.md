@@ -406,4 +406,5 @@ Delete user profile
 
 ## Author
 
-Student ID: [Your Student ID]
+Student ID: 26965
+Name: Irakoze Micomyiza Rodrigue
