@@ -13,15 +13,15 @@ import java.util.List;
 public class BookController {
     
     private List<Book> books = new ArrayList<>();
-    private Long nextId = 26971L;
+    private int nextId = 7;
 
     public BookController() {
-        books.add(new Book(26965L, "Spring Boot Mastery", "Irakoze Micomyiza Rodrigue", "978-2696500001", 2024));
-        books.add(new Book(26966L, "The Pragmatic Programmer", "Andrew Hunt", "978-0201616224", 1999));
-        books.add(new Book(26967L, "Head First Design Patterns", "Eric Freeman", "978-0596007126", 2004));
-        books.add(new Book(26968L, "Code Complete", "Steve McConnell", "978-0735619678", 2004));
-        books.add(new Book(26969L, "Refactoring", "Martin Fowler", "978-0134757599", 2018));
-        books.add(new Book(26970L, "You Don't Know JS", "Kyle Simpson", "978-1491904244", 2015));
+        books.add(new Book("BK26965", "Spring Boot Mastery", "Irakoze Micomyiza Rodrigue", "978-2696500001", 2024));
+        books.add(new Book("BK26966", "The Pragmatic Programmer", "Andrew Hunt", "978-0201616224", 1999));
+        books.add(new Book("BK26967", "Head First Design Patterns", "Eric Freeman", "978-0596007126", 2004));
+        books.add(new Book("BK26968", "Code Complete", "Steve McConnell", "978-0735619678", 2004));
+        books.add(new Book("BK26969", "Refactoring", "Martin Fowler", "978-0134757599", 2018));
+        books.add(new Book("BK26970", "You Don't Know JS", "Kyle Simpson", "978-1491904244", 2015));
     }
 
     @GetMapping
@@ -30,7 +30,7 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
+    public ResponseEntity<Book> getBookById(@PathVariable String id) {
         return books.stream()
                 .filter(book -> book.getId().equals(id))
                 .findFirst()
@@ -48,13 +48,13 @@ public class BookController {
 
     @PostMapping
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
-        book.setId(nextId++);
+        book.setId("BK2696" + nextId++);
         books.add(book);
         return ResponseEntity.status(HttpStatus.CREATED).body(book);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBook(@PathVariable String id) {
         boolean removed = books.removeIf(book -> book.getId().equals(id));
         return removed ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }

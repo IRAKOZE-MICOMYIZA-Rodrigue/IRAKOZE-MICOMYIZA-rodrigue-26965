@@ -1,7 +1,7 @@
 package com.restapi.library.model;
 
 public class Book {
-    private Long id;
+    private String id;
     private String title;
     private String author;
     private String isbn;
@@ -9,7 +9,7 @@ public class Book {
 
     public Book() {}
 
-    public Book(Long id, String title, String author, String isbn, int publicationYear) {
+    public Book(String id, String title, String author, String isbn, int publicationYear) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -17,11 +17,11 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
